@@ -6,7 +6,8 @@
 *.dylib
 
 *.test
+
 *.out
 
- Db folder
- db/
+Db folder
+db/
