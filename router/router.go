@@ -21,7 +21,7 @@ func Initialize() {
 
 	r := gin.Default()
 
-  initializeRoutes(r)
+	initializeRoutes(r)
 
 	if err := r.Run(":" + portString); err != nil {
 		log.Printf("Failed to run server: %v", err)
