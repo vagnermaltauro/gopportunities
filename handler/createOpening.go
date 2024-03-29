@@ -9,13 +9,11 @@ func CreateOpeningHandler(ctx *gin.Context) {
 
 	if err := ctx.BindJSON(&request); err != nil {
 		logger.Errorf("Error binding request: %v", err.Error())
-		ctx.JSON(400, gin.H{"error": "Invalid request"})
 		return
 	}
 
 	if err := request.Validate(); err != nil {
 		logger.Errorf("Error validating request: %v", err.Error())
-		ctx.JSON(400, gin.H{"error": "Invalid request"})
 		return
 	}
 
