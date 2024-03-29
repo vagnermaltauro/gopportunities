@@ -7,7 +7,11 @@ import (
 func CreateOpeningHandler(ctx *gin.Context) {
 	request := CreateOpeningRequest{}
 
-	ctx.BindJSON(&request)
+	if err := ctx.BindJSON(&request); err != nil {
+		logger.Errorf("Error binding request: %v", err.Error())
+		ctx.JSON(400, gin.H{"error": "Invalid request"})
+		return
+	}
 
 	if err := db.Create(&request).Error; err != nil {
 		logger.Errorf("Error create opening: %v", err.Error())
