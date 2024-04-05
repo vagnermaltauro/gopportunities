@@ -1,15 +1,18 @@
-.PHONY: default run build rest docs clean
+.PHONY: default run build test docs clean
 
 APP_NAME=gopportunities
 
-default: run
+default: run-with-docs
 
 run:
+	@go run main.go
+run-with-docs:
+	@swag init
 	@go run main.go
 build:
 	@go build -o $(APP_NAME) main.go
 test:
-	@go test -v ./...
+	@go test ./ ...
 docs:
 	@swag init
 clean:
