@@ -6,7 +6,15 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/vagnermaltauro/gopportunities/schemas"
 )
+// @BasePath /api/v1
 
+// @Summary Create a new opening
+// @Description Create a new opening
+// @Tags Openings
+// @Accept json
+// @Produce json
+// @Param body body CreateOpeningRequest true "CreateOpeningRequest"
+// @Success 200 {object} OpeningResponse
 func CreateOpeningHandler(ctx *gin.Context) {
 	request := CreateOpeningRequest{}
 
