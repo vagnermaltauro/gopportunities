@@ -14,7 +14,7 @@ import (
 // @Tags Openings
 // @Accept json
 // @Produce json
-// @Param body body CreateOpeningRequest true "CreateOpeningRequest"
+// @Param body body CreateOpeningRequest true "Request Body"
 // @Success 201 {object} CreateOpeningResponse
 // @Error 400 {object} ErrorResponse
 // @Error 500 {object} ErrorResponse
